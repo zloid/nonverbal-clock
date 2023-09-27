@@ -19,7 +19,9 @@ class NonverbalClock {
 
     // schedule a draw for the next minute
     function queueDraw() {
-      if (drawTimeout) clearTimeout(drawTimeout);
+      if (drawTimeout) {
+        clearTimeout(drawTimeout);
+      }
       drawTimeout = setTimeout(function () {
         drawTimeout = undefined;
         draw();
@@ -58,7 +60,9 @@ class NonverbalClock {
         draw(); // draw immediately, queue redraw
       } else {
         // stop draw timer
-        if (drawTimeout) clearTimeout(drawTimeout);
+        if (drawTimeout) {
+          clearTimeout(drawTimeout);
+        }
         drawTimeout = undefined;
       }
     });
